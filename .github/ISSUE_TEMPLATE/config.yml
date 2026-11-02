@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 🔒 Report a Security Vulnerability
+    url: https://github.com/amanpal3/Dr-SKILLs/security/advisories/new
+    about: Please report security vulnerabilities and sensitive leaks privately here rather than through public issues.
