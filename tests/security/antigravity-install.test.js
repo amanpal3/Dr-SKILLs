@@ -151,9 +151,10 @@ test('Antigravity installation lifecycle in isolated home directory', async (t) 
     // Step 5: Failure and error handling
     // ------------------------------------------------------------------
     // A. Prohibited system directory
+    const prohibitedDir = process.platform === 'win32' ? 'C:\\Windows\\System32' : '/etc';
     let sysDirBlocked = false;
     try {
-      execFileSync(process.execPath, [CLI_PATH, 'install', 'C:\\Windows\\System32'], {
+      execFileSync(process.execPath, [CLI_PATH, 'install', prohibitedDir], {
         env: testEnv,
         encoding: 'utf8',
         stdio: ['pipe', 'pipe', 'pipe']
@@ -166,9 +167,10 @@ test('Antigravity installation lifecycle in isolated home directory', async (t) 
     assert.equal(sysDirBlocked, true, 'Protected system directory must be blocked');
 
     // B. Missing directory / permission error
+    const nonExistentTarget = process.platform === 'win32' ? 'Z:\\NonExistentDrive\\forbidden' : '/dev/null/forbidden/target';
     let invalidTargetHandled = false;
     try {
-      execFileSync(process.execPath, [CLI_PATH, 'install', 'Z:\\NonExistentDrive\\forbidden'], {
+      execFileSync(process.execPath, [CLI_PATH, 'install', nonExistentTarget], {
         env: testEnv,
         encoding: 'utf8',
         stdio: ['pipe', 'pipe', 'pipe']
