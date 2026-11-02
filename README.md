@@ -10,16 +10,17 @@
 </p>
 
 <p align="center">
-  <a href="#-included"><img src="https://img.shields.io/badge/Dr--SKILLs-54%20Skills-0ea5e9?style=for-the-badge&logo=probot" alt="Skills" /></a>
+  <a href="https://www.npmjs.com/package/dr-skills"><img src="https://img.shields.io/npm/v/dr-skills?style=for-the-badge&logo=npm&color=CB3837" alt="npm version" /></a>
+  <a href="#-skill-catalog-54-skills"><img src="https://img.shields.io/badge/Dr--SKILLs-54%20Skills-0ea5e9?style=for-the-badge&logo=probot" alt="Skills" /></a>
   <a href="#-namespaced-plugins"><img src="https://img.shields.io/badge/Plugins-6%20Packages-8b5cf6?style=for-the-badge&logo=powershell" alt="Plugins" /></a>
   <a href="#-real-time-mcp-integrations"><img src="https://img.shields.io/badge/MCP%20Servers-7%20Integrated-10b981?style=for-the-badge&logo=fastapi" alt="MCP Servers" /></a>
   <a href="SECURITY.md"><img src="https://img.shields.io/badge/Security-OWASP%20Hardened-059669?style=for-the-badge&logo=shield" alt="Security" /></a>
-  <a href="#-security-hardening--governance"><img src="https://img.shields.io/badge/Tests-26%2F26%20Passing-22c55e?style=for-the-badge&logo=node.js" alt="Tests" /></a>
+  <a href="#-security-hardening--governance"><img src="https://img.shields.io/badge/Tests-30%2F30%20Passing-22c55e?style=for-the-badge&logo=node.js" alt="Tests" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-64748b?style=for-the-badge" alt="License" /></a>
 </p>
 
 <p align="center">
-  <sub>🛡️ <strong>Watermark:</strong> Curated &amp; Maintained by <strong>Aman Pal</strong> • Verified Build v2.1.0</sub>
+  <sub>🛡️ <strong>Watermark:</strong> Curated &amp; Maintained by <strong>Aman Pal</strong> • Verified Build v2.2.0</sub>
 </p>
 
 ---
@@ -70,12 +71,14 @@ npx -y dr-skills rollback
 
 ---
 
-### Key Documentation Links
+### Key Documentation & Issue Links
 
 - 📖 [**ECOSYSTEM.md**](ECOSYSTEM.md) — Complete catalog and technical specifications for all skills, plugins, and MCP servers.
 - 🔒 [**SECURITY.md**](SECURITY.md) — Security policy, path sanitization invariants, and vulnerability reporting.
 - 🛡️ [**DEFEND.md**](DEFEND.md) — Defend What You Ship: whiteboard defense checklists, session handover, and pre-ship quality gates.
 - 🤝 [**CONTRIBUTING.md**](CONTRIBUTING.md) — Contributor guide for local development, adding skills, and testing.
+- 🐛 [**Report a Bug**](https://github.com/amanpal3/Dr-SKILLs/issues/new?template=bug_report.md) — File an issue with reproduction details and doctor output.
+- 💡 [**Request a Feature**](https://github.com/amanpal3/Dr-SKILLs/issues/new?template=feature_request.md) — Propose a new skill, plugin, or agent integration.
 
 ---
 
@@ -325,6 +328,16 @@ This repository adheres to enterprise DevSecOps standards:
   npm test
   ```
 - **Vulnerability Reporting:** See [**`SECURITY.md`**](SECURITY.md) for responsible disclosure guidelines.
+
+---
+
+## 💬 Issues & Community Feedback
+
+We welcome feedback, bug reports, and new skill proposals:
+
+- 🐛 **Found a Bug?** Open a [Bug Report](https://github.com/amanpal3/Dr-SKILLs/issues/new?template=bug_report.md) with your OS, Node.js version, and `dr-skills doctor` output.
+- 💡 **Have a Feature or Skill Idea?** Submit a [Feature Request](https://github.com/amanpal3/Dr-SKILLs/issues/new?template=feature_request.md) to suggest new skills, plugins, or agent integrations.
+- 🔒 **Security Vulnerabilities:** Do **not** open public issues for security vulnerabilities. Please report them privately via [GitHub Security Advisories](https://github.com/amanpal3/Dr-SKILLs/security/advisories/new) in accordance with our [Security Policy](SECURITY.md).
 
 ---
 
