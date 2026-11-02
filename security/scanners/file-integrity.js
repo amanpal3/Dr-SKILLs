@@ -22,13 +22,20 @@ const CRITICAL_FILES = [
 
 /**
  * Calculates SHA-256 hash of a file.
+ * Normalizes CRLF line endings to LF so that cross-platform line ending differences
+ * (e.g. Windows vs Linux/macOS checkouts) produce deterministic, stable hashes.
+ * Uses binary-safe buffer replacement to preserve arbitrary character encodings.
+ * All protected governance, skill, plugin, and rule files must use consistent line endings.
  * @param {string} filePath
  * @returns {string|null} Hex digest
  */
 function hashFile(filePath) {
   if (!fs.existsSync(filePath)) return null;
   const content = fs.readFileSync(filePath);
-  return crypto.createHash('sha256').update(content).digest('hex');
+  // Normalize \r\n (CRLF) to \n (LF) across buffer without character loss/corruption
+  // so checkout EOL differences across OS (Windows vs Linux/macOS) do not cause false mismatches.
+  const normalized = Buffer.from(content.toString('binary').replace(/\r\n/g, '\n'), 'binary');
+  return crypto.createHash('sha256').update(normalized).digest('hex');
 }
 
 /**

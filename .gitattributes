@@ -1,0 +1,11 @@
+# Dr-SKILLs Git Attributes
+# Enforce deterministic LF line endings across Linux, macOS, and Windows for integrity verification
+* text=auto eol=lf
+*.bat text eol=crlf
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.tgz binary
+*.tar.gz binary

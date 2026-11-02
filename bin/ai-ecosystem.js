@@ -16,7 +16,7 @@ const { validateMcpConfig } = require('../security/validators/mcp-validator');
 const { scanForSecrets } = require('../security/scanners/secret-scanner');
 const { verifyPackageIntegrity } = require('../security/scanners/file-integrity');
 
-const REPO_ROOT = path.resolve(__dirname, '..');
+const REPO_ROOT = process.env.AI_ECOSYSTEM_REPO_ROOT || path.resolve(__dirname, '..');
 const BACKUP_ROOT = process.env.AI_ECOSYSTEM_BACKUP_ROOT || path.join(os.homedir(), '.gemini', 'backups');
 
 function printBanner(title) {
