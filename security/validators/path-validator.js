@@ -37,9 +37,21 @@ function getSystemPaths() {
     );
   } else {
     systemPaths.push('/', '/root', '/etc', '/bin', '/sbin', '/usr', '/var', '/sys', '/proc');
+    if (process.platform === 'darwin') {
+      systemPaths.push('/private/etc', '/private/var');
+    }
   }
   return systemPaths;
 }
+
+const DARWIN_SYSTEM_SYMLINKS = new Set([
+  '/var',
+  '/tmp',
+  '/etc',
+  '/private/var',
+  '/private/tmp',
+  '/private/etc'
+]);
 
 /**
  * Validates and normalizes target installation or file paths.
@@ -112,16 +124,20 @@ function assertSafePath(candidatePath, options = {}) {
     }
 
     const stat = fs.lstatSync(current);
-    if (rejectLinks && stat.isSymbolicLink()) {
+    const isDarwinSystemPrefix = process.platform === 'darwin' && DARWIN_SYSTEM_SYMLINKS.has(current) && current !== resolved;
+
+    if (rejectLinks && stat.isSymbolicLink() && !isDarwinSystemPrefix) {
       throw new Error(`Security Error: Symlink or junction detected in path component "${current}". Links are prohibited in installation targets.`);
     }
 
     const real = fs.realpathSync(current);
     const cleanReal = real.replace(/[/\\]+$/, '').toLowerCase();
 
-    for (const sysPath of systemPaths) {
-      if (sysPath && cleanReal === path.resolve(sysPath).replace(/[/\\]+$/, '').toLowerCase()) {
-        throw new Error(`Security Error: Resolved real path matches protected system directory: "${real}"`);
+    if (!isDarwinSystemPrefix) {
+      for (const sysPath of systemPaths) {
+        if (sysPath && cleanReal === path.resolve(sysPath).replace(/[/\\]+$/, '').toLowerCase()) {
+          throw new Error(`Security Error: Resolved real path matches protected system directory: "${real}"`);
+        }
       }
     }
 

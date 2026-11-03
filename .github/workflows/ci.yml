@@ -102,9 +102,26 @@ jobs:
           tar -tf "$TARBALL" | grep "package/.agent/skills/antigravity-agents/SKILL.md"
 
       - name: Test Extracted Tarball CLI Execution
+        shell: bash
         run: |
-          TARBALL=$(ls *.tgz | head -n 1)
-          mkdir /tmp/tarball-test
-          cd /tmp/tarball-test
-          npx -y "${GITHUB_WORKSPACE}/${TARBALL}" help
-          npx -y "${GITHUB_WORKSPACE}/${TARBALL}" doctor
+          set -euo pipefail
+
+          TARBALL="$(find "$GITHUB_WORKSPACE" -maxdepth 1 -type f -name '*.tgz' -print -quit)"
+          test -n "$TARBALL"
+          test -f "$TARBALL"
+
+          TEST_DIR="$(mktemp -d)"
+          CLEAN_HOME="$TEST_DIR/home"
+          mkdir -p "$CLEAN_HOME"
+
+          npm install \
+            --prefix "$TEST_DIR" \
+            --ignore-scripts \
+            "$TARBALL"
+
+          CLI="$TEST_DIR/node_modules/.bin/dr-skills"
+          test -x "$CLI"
+
+          HOME="$CLEAN_HOME" "$CLI" help
+          HOME="$CLEAN_HOME" "$CLI" doctor
+

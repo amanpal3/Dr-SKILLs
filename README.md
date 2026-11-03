@@ -5,8 +5,8 @@
 </p>
 
 <p align="center">
-  <strong>Dr-SKILLs: The Autonomous AI Developer Agent Skills &amp; MCP Ecosystem</strong><br/>
-  <em>Prescribing modular skills, surgical refactoring, and enterprise governance for Google Antigravity, Claude Code, Cursor, and Codex.</em>
+  <strong>Dr-SKILLs 🩺⚡ — Stop Vibecoding. Start Shipping.</strong><br/>
+  <em>54+ modular skills, MCP servers, and guardrails that make Google Antigravity, Claude Code, Cursor, and Codex build reliable, production-ready software.</em>
 </p>
 
 <p align="center">
@@ -91,6 +91,35 @@ npm install
 npm run doctor
 npm test
 ```
+
+---
+
+## 🛑 The Problem: Why Vibecoding Falls Apart
+
+Vibecoding has a bad reputation — and it deserves it.
+
+You describe what you want, AI generates code, and you get inconsistent garbage that falls apart at scale.
+
+**Dr-SKILLs fixes that.** It's the context engineering layer that makes AI coding reliable.
+
+```
+Without Dr-SKILLs:
+"Add a feature" ──► Inconsistent code ──► Bugs everywhere ──► Debug loop ──► Frustration 💥
+
+With Dr-SKILLs:
+"Add a feature" ──► SPEC ──► Plan ──► Atomic Execution ──► Verification Gate ──► Done 🚀
+```
+
+> **No enterprise roleplay.** No sprint ceremonies, story points, stakeholder syncs, or Jira workflows. Just an incredibly effective system for building cool stuff consistently.
+
+### 💡 Example: Implementing an Authenticated API
+
+| Phase | ❌ Without Dr-SKILLs (Vibecoding) | ✅ With Dr-SKILLs (Context Engineering) |
+| :--- | :--- | :--- |
+| **1. Request** | *"Add user auth with JWT"* | User intent captured in a locked `.gsd/SPEC.md` contract |
+| **2. Planning** | Agent hallucinates deprecated SDK methods in memory | Decomposed into phased `PLAN.md` tasks with dependency waves |
+| **3. Execution** | Leaks secret key to client bundle, forgets input validation | Atomic execution wave: strict OWASP validation, zero secret leakage |
+| **4. Verification** | *"Trust me, it works"* (Breaks in CI/production) | Empirical proof gate: automated tests pass, exit code 0 verified |
 
 ---
 
