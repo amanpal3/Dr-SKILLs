@@ -106,5 +106,5 @@ jobs:
           TARBALL=$(ls *.tgz | head -n 1)
           mkdir /tmp/tarball-test
           cd /tmp/tarball-test
-          npx -y "${GITHUB_WORKSPACE}/${TARBALL}" help
-          npx -y "${GITHUB_WORKSPACE}/${TARBALL}" doctor
+          npx -y --package "${GITHUB_WORKSPACE}/${TARBALL}" dr-skills help
+          npx -y --package "${GITHUB_WORKSPACE}/${TARBALL}" dr-skills doctor
