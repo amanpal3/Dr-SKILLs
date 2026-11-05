@@ -1,17 +1,18 @@
 <p align="center">
   <a href="#-quick-start">
-    <img src="assets/logo.png" alt="Dr-SKILLs Logo" width="130" style="border-radius: 24px; box-shadow: 0 10px 30px rgba(0, 229, 255, 0.25);" />
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="assets/dr-skills-lockup-dark.svg" />
+      <img src="assets/dr-skills-lockup-light.svg" alt="Dr-SKILLs" width="440" height="121" />
+    </picture>
   </a>
 </p>
-
-<h1 align="center">Dr-SKILLs 🩺⚡</h1>
 
 <p align="center">
   <img src="assets/dr_skills_banner_ponytail.png" alt="Dr-SKILLs Banner" width="100%" style="border-radius: 16px; box-shadow: 0 12px 40px rgba(0, 229, 255, 0.2);" />
 </p>
 
 <p align="center">
-  <strong>Dr-SKILLs 🩺⚡ — Stop Vibecoding. Start Shipping.</strong><br/>
+  <strong>Stop Vibecoding. Start Shipping.</strong><br/>
   <em>54+ modular skills, MCP servers, and guardrails that make Google Antigravity, Claude Code, Cursor, and Codex build reliable, production-ready software.</em>
 </p>
 
