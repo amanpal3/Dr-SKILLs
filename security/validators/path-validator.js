@@ -54,6 +54,25 @@ const DARWIN_SYSTEM_SYMLINKS = new Set([
 ]);
 
 /**
+ * Normalizes system symlink aliases on Darwin (/private/var -> /var, /private/tmp -> /tmp, /private/etc -> /etc)
+ * so lexical path comparisons against base directories or boundaries remain consistent.
+ */
+function normalizeDarwinPrefix(p) {
+  if (process.platform === 'darwin' && typeof p === 'string') {
+    if (p.startsWith('/private/var/') || p === '/private/var') {
+      return p.slice('/private'.length);
+    }
+    if (p.startsWith('/private/tmp/') || p === '/private/tmp') {
+      return p.slice('/private'.length);
+    }
+    if (p.startsWith('/private/etc/') || p === '/private/etc') {
+      return p.slice('/private'.length);
+    }
+  }
+  return p;
+}
+
+/**
  * Validates and normalizes target installation or file paths.
  * Enforces lexical checks AND resolves real paths across existing filesystem components,
  * rejecting symlinks and junctions when rejectLinks is true.
@@ -102,12 +121,26 @@ function assertSafePath(candidatePath, options = {}) {
     }
   }
 
-  // 6. Enforce base boundary if provided (lexical check)
+  // 6. Enforce base boundary if provided (lexical check with Darwin symlink alias & realpath fallback)
   if (options.baseDir) {
     const resolvedBase = path.resolve(options.baseDir);
-    const relative = path.relative(resolvedBase, resolved);
+    const normBase = normalizeDarwinPrefix(resolvedBase);
+    const normTarget = normalizeDarwinPrefix(resolved);
+    const relative = path.relative(normBase, normTarget);
+
     if (relative.startsWith('..') || path.isAbsolute(relative)) {
-      throw new Error(`Security Error: Path traversal detected. Target path "${resolved}" escapes base directory "${resolvedBase}"`);
+      let withinRealBoundary = false;
+      if (fs.existsSync(resolvedBase) && fs.existsSync(resolved)) {
+        const realBase = fs.realpathSync(resolvedBase);
+        const realTarget = fs.realpathSync(resolved);
+        const relReal = path.relative(realBase, realTarget);
+        if (!relReal.startsWith('..') && !path.isAbsolute(relReal)) {
+          withinRealBoundary = true;
+        }
+      }
+      if (!withinRealBoundary) {
+        throw new Error(`Security Error: Path traversal detected. Target path "${resolved}" escapes base directory "${resolvedBase}"`);
+      }
     }
   }
 
@@ -180,8 +213,12 @@ function secureCopyDirectory(srcDir, destDir, options = {}) {
   const rejectLinks = options.rejectLinks !== false;
   const resolvedSrc = path.resolve(srcDir);
   const resolvedDest = path.resolve(destDir);
-  const sourceBoundary = path.resolve(options.sourceBoundary || resolvedSrc);
-  const destBoundary = path.resolve(options.destBoundary || resolvedDest);
+  const rawSourceBoundary = path.resolve(options.sourceBoundary || resolvedSrc);
+  const rawDestBoundary = path.resolve(options.destBoundary || resolvedDest);
+
+  const realSourceBoundary = fs.existsSync(rawSourceBoundary)
+    ? fs.realpathSync(rawSourceBoundary)
+    : rawSourceBoundary;
 
   if (!fs.existsSync(resolvedSrc)) {
     throw new Error(`Source directory does not exist: "${resolvedSrc}"`);
@@ -221,9 +258,9 @@ function secureCopyDirectory(srcDir, destDir, options = {}) {
     }
 
     const realSrc = fs.realpathSync(currentSrc);
-    const relToSourceBoundary = path.relative(sourceBoundary, realSrc);
+    const relToSourceBoundary = path.relative(realSourceBoundary, realSrc);
     if (relToSourceBoundary.startsWith('..') || path.isAbsolute(relToSourceBoundary)) {
-      throw new Error(`Security Error: Source path "${currentSrc}" resolves to "${realSrc}" which escapes boundary "${sourceBoundary}".`);
+      throw new Error(`Security Error: Source path "${currentSrc}" resolves to "${realSrc}" which escapes boundary "${realSourceBoundary}".`);
     }
 
     if (stat.isDirectory()) {
@@ -263,5 +300,6 @@ module.exports = {
   assertSafePath,
   secureCopyDirectory,
   SENSITIVE_SEGMENTS,
-  getSystemPaths
+  getSystemPaths,
+  normalizeDarwinPrefix
 };

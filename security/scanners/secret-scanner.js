@@ -41,6 +41,7 @@ const IGNORED_DIRS = new Set([
  */
 function scanForSecrets(targetPath) {
   const root = path.resolve(targetPath);
+  const realRoot = fs.existsSync(root) ? fs.realpathSync(root) : root;
   const findings = [];
   let scannedFiles = 0;
 
@@ -57,8 +58,8 @@ function scanForSecrets(targetPath) {
 
     // Verify realpath remains within root boundary
     const realPath = fs.realpathSync(itemPath);
-    const relToRoot = path.relative(root, realPath);
-    if (relToRoot.startsWith('..') || (path.isAbsolute(relToRoot) && relToRoot !== root)) {
+    const relToRoot = path.relative(realRoot, realPath);
+    if (relToRoot.startsWith('..') || (path.isAbsolute(relToRoot) && relToRoot !== realRoot)) {
       return;
     }
 

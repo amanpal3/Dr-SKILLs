@@ -7,7 +7,7 @@ const { test } = require('node:test');
 const assert = require('node:assert/strict');
 const path = require('path');
 const os = require('os');
-const { assertSafePath } = require('../../security/validators/path-validator');
+const { assertSafePath, normalizeDarwinPrefix } = require('../../security/validators/path-validator');
 
 test('assertSafePath rejects null, empty, or whitespace inputs', () => {
   assert.throws(() => assertSafePath(null), /cannot be null/i);
@@ -64,4 +64,16 @@ test('assertSafePath accepts legitimate, safe project paths', () => {
   const safeDir = path.join(os.tmpdir(), 'my-valid-project');
   const resolved = assertSafePath(safeDir);
   assert.equal(resolved, path.resolve(safeDir));
+});
+
+test('normalizeDarwinPrefix correctly strips /private prefix on Darwin for system symlink roots', () => {
+  if (process.platform === 'darwin') {
+    assert.equal(normalizeDarwinPrefix('/private/var/folders/123'), '/var/folders/123');
+    assert.equal(normalizeDarwinPrefix('/private/tmp/project'), '/tmp/project');
+    assert.equal(normalizeDarwinPrefix('/private/etc/config'), '/etc/config');
+    assert.equal(normalizeDarwinPrefix('/Users/runner/work'), '/Users/runner/work');
+  } else {
+    // On non-Darwin, it passes paths through without modification
+    assert.equal(normalizeDarwinPrefix('/any/path'), '/any/path');
+  }
 });
