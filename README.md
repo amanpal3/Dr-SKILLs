@@ -1,4 +1,10 @@
-# Dr-SKILLs
+<p align="center">
+  <a href="#-quick-start">
+    <img src="assets/logo.png" alt="Dr-SKILLs Logo" width="130" style="border-radius: 24px; box-shadow: 0 10px 30px rgba(0, 229, 255, 0.25);" />
+  </a>
+</p>
+
+<h1 align="center">Dr-SKILLs 🩺⚡</h1>
 
 <p align="center">
   <img src="assets/dr_skills_banner_ponytail.png" alt="Dr-SKILLs Banner" width="100%" style="border-radius: 16px; box-shadow: 0 12px 40px rgba(0, 229, 255, 0.2);" />
@@ -15,7 +21,7 @@
   <a href="#-namespaced-plugins"><img src="https://img.shields.io/badge/Plugins-6%20Packages-8b5cf6?style=for-the-badge&logo=powershell" alt="Plugins" /></a>
   <a href="#-real-time-mcp-integrations"><img src="https://img.shields.io/badge/MCP%20Servers-7%20Integrated-10b981?style=for-the-badge&logo=fastapi" alt="MCP Servers" /></a>
   <a href="SECURITY.md"><img src="https://img.shields.io/badge/Security-OWASP%20Hardened-059669?style=for-the-badge&logo=shield" alt="Security" /></a>
-  <a href="#-security-hardening--governance"><img src="https://img.shields.io/badge/Tests-30%2F30%20Passing-22c55e?style=for-the-badge&logo=node.js" alt="Tests" /></a>
+  <a href="#-security-hardening--governance"><img src="https://img.shields.io/badge/Tests-31%2F31%20Passing-22c55e?style=for-the-badge&logo=node.js" alt="Tests" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-64748b?style=for-the-badge" alt="License" /></a>
 </p>
 
@@ -371,7 +377,7 @@ We welcome feedback, bug reports, and new skill proposals:
 ---
 
 <p align="center">
-  <img src="assets/dr_skills_logo_ponytail.png" alt="Dr-SKILLs Emblem" width="80" style="border-radius: 12px; vertical-align: middle;" /><br/>
+  <img src="assets/logo.png" alt="Dr-SKILLs Emblem" width="84" style="border-radius: 18px; vertical-align: middle; box-shadow: 0 4px 20px rgba(0, 229, 255, 0.25);" /><br/>
   <strong>Built with ⚡ by Aman Pal for the next generation of autonomous AI developers.</strong><br/>
   <sub>🩺 <strong>Dr-SKILLs</strong> © 2026 Aman Pal. Released under the <a href="LICENSE">MIT License</a>. Maintained with surgical precision.</sub>
 </p>
