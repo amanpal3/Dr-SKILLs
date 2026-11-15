@@ -38,9 +38,11 @@ test('CLI help command outputs usage instructions', () => {
 
 test('CLI install command works non-destructively in an isolated target directory', () => {
   const tmpTarget = fs.mkdtempSync(path.join(os.tmpdir(), 'cli-install-'));
+  const tmpBackups = path.join(tmpTarget, 'backups');
 
   const output = execFileSync(process.execPath, [CLI_PATH, 'install', tmpTarget], {
-    encoding: 'utf8'
+    encoding: 'utf8',
+    env: { ...process.env, AI_ECOSYSTEM_BACKUP_ROOT: tmpBackups }
   });
 
   assert.match(output, /INSTALLING ECOSYSTEM/);
@@ -57,6 +59,7 @@ test('CLI install command works non-destructively in an isolated target director
 
 test('CLI uninstall strictly preserves unrelated project-root folders (gsd, graphify, brand, slides)', () => {
   const tmpTarget = fs.mkdtempSync(path.join(os.tmpdir(), 'cli-uninstall-safety-'));
+  const tmpBackups = path.join(tmpTarget, 'backups');
 
   // Create user's custom project root folders that share names with ecosystem skills
   const userRootFolders = ['gsd', 'graphify', 'brand', 'slides', 'custom-app'];
@@ -67,14 +70,20 @@ test('CLI uninstall strictly preserves unrelated project-root folders (gsd, grap
   }
 
   // 1. Install ecosystem into project target
-  execFileSync(process.execPath, [CLI_PATH, 'install', tmpTarget], { encoding: 'utf8' });
+  execFileSync(process.execPath, [CLI_PATH, 'install', tmpTarget], {
+    encoding: 'utf8',
+    env: { ...process.env, AI_ECOSYSTEM_BACKUP_ROOT: tmpBackups }
+  });
 
   const targetAgentSkills = path.join(tmpTarget, '.agent', 'skills');
   assert.equal(fs.existsSync(path.join(targetAgentSkills, 'gsd')), true);
   assert.equal(fs.existsSync(path.join(targetAgentSkills, 'brand')), true);
 
   // 2. Run uninstall on project target
-  const uninstallOutput = execFileSync(process.execPath, [CLI_PATH, 'uninstall', tmpTarget], { encoding: 'utf8' });
+  const uninstallOutput = execFileSync(process.execPath, [CLI_PATH, 'uninstall', tmpTarget], {
+    encoding: 'utf8',
+    env: { ...process.env, AI_ECOSYSTEM_BACKUP_ROOT: tmpBackups }
+  });
   assert.match(uninstallOutput, /UNINSTALLING ECOSYSTEM/);
   assert.match(uninstallOutput, /Safely removed/);
 

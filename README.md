@@ -8,17 +8,17 @@
 </p>
 
 <p align="center">
-  <img src="assets/dr_skills_banner_ponytail.png" alt="Dr-SKILLs Banner" width="100%" style="border-radius: 16px; box-shadow: 0 12px 40px rgba(0, 229, 255, 0.2);" />
+  <img src="assets/anti%20banner.png" alt="Dr-SKILLs Banner" width="100%" style="border-radius: 16px; box-shadow: 0 12px 40px rgba(0, 229, 255, 0.2);" />
 </p>
 
 <p align="center">
   <strong>Stop Vibecoding. Start Shipping.</strong><br/>
-  <em>54+ modular skills, MCP servers, and guardrails that make Google Antigravity, Claude Code, Cursor, and Codex build reliable, production-ready software.</em>
+  <em>55+ modular skills, MCP servers, and guardrails that make Google Antigravity, Claude Code, Cursor, and Codex build reliable, production-ready software.</em>
 </p>
 
 <p align="center">
   <a href="https://www.npmjs.com/package/dr-skills"><img src="https://img.shields.io/npm/v/dr-skills?style=for-the-badge&logo=npm&color=CB3837" alt="npm version" /></a>
-  <a href="#-skill-catalog-54-skills"><img src="https://img.shields.io/badge/Dr--SKILLs-54%20Skills-0ea5e9?style=for-the-badge&logo=probot" alt="Skills" /></a>
+  <a href="#-skill-catalog-55-skills"><img src="https://img.shields.io/badge/Dr--SKILLs-55%20Skills-0ea5e9?style=for-the-badge&logo=probot" alt="Skills" /></a>
   <a href="#-namespaced-plugins"><img src="https://img.shields.io/badge/Plugins-6%20Packages-8b5cf6?style=for-the-badge&logo=powershell" alt="Plugins" /></a>
   <a href="#-real-time-mcp-integrations"><img src="https://img.shields.io/badge/MCP%20Servers-7%20Integrated-10b981?style=for-the-badge&logo=fastapi" alt="MCP Servers" /></a>
   <a href="SECURITY.md"><img src="https://img.shields.io/badge/Security-OWASP%20Hardened-059669?style=for-the-badge&logo=shield" alt="Security" /></a>
@@ -27,7 +27,7 @@
 </p>
 
 <p align="center">
-  <sub>🛡️ <strong>Watermark:</strong> Curated &amp; Maintained by <strong>Aman Pal</strong> • Verified Build v2.2.0</sub>
+  <sub>🛡️ <strong>Watermark:</strong> Curated &amp; Maintained by <strong>Aman Pal</strong> • Verified Build v2.3.0</sub>
 </p>
 
 ---
@@ -179,6 +179,7 @@ User Request
  ├── 📚 Library Docs / API Reference ──► context7-mcp
  ├── 🚨 Error Tracking / APM / Sentry──► integrating-sentry + error-handling-patterns
  ├── 🛡️ Security / Whiteboard Defense──► defend-what-you-ship + security-audit + owasp-security
+ ├── 🔍 Codebase Audit & Advisory   ──► improve + code-review
  ├── 🛠️ Backend / API / Database     ──► building-backend + integrating-sentry
  ├── ✂️ Anti-Bloat / Minimal Code    ──► ponytail
  ├── 🚀 Full Autonomous Delivery     ──► unified-build-pipeline (GSD + Ralph + CodeRabbit)
@@ -190,7 +191,7 @@ User Request
 
 ---
 
-## 🧩 Skill Catalog (54 Skills)
+## 🧩 Skill Catalog (55 Skills)
 
 ### 🛠️ Backend, APIs & Infrastructure
 
@@ -233,6 +234,7 @@ User Request
 | **`security-audit`**       | [`.agent/skills/security-audit/`](.agent/skills/security-audit/)             | Adversarial security auditor: reconnaissance, coverage hunting across 10 attack classes, and candidate verification.       |
 | **`owasp-security`**       | [`.agent/skills/owasp-security/`](.agent/skills/owasp-security/)             | OWASP Top 10 mitigation, auth boundaries, strict input validation, secret hygiene, and SQLi/XSS defense.                   |
 | **`code-review`**          | [`.agent/skills/code-review/`](.agent/skills/code-review/)                   | Senior code review auditing for correctness, security vulnerabilities, performance bottlenecks, and clean diffs.           |
+| **`improve`**              | [`.agent/skills/improve/`](.agent/skills/improve/)                           | Codebase audit & planning advisor that never modifies source code directly; produces self-contained execution specs in `plans/`. |
 | **`testing-code`**         | [`.agent/skills/testing-code/`](.agent/skills/testing-code/)                 | Automated test architecture across Unit, Integration, and E2E tiers (Vitest, Jest, Pytest, Playwright).                    |
 
 ### ✂️ Simplicity & Anti-Overengineering (Ponytail Suite)

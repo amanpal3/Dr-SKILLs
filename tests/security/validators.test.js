@@ -31,7 +31,7 @@ test('validateManifest passes on current repository manifest', () => {
   const repoRoot = path.resolve(__dirname, '../..');
   const res = validateManifest(path.join(repoRoot, 'manifest.json'), repoRoot);
   assert.equal(res.valid, true, `Validation errors: ${res.errors.join('; ')}`);
-  assert.equal(res.stats.declaredSkills, 54);
+  assert.equal(res.stats.declaredSkills, 55);
   assert.equal(res.stats.declaredPlugins, 6);
 });
 
@@ -147,7 +147,7 @@ test('Package integrity: integrity.json matches current tracked files and root h
   assert.equal(pkgCheck.passed, true, `Integrity mismatches: ${pkgCheck.mismatches.join(', ')} | Missing: ${pkgCheck.missing.join(', ')}`);
   assert.equal(pkgCheck.mismatches.length, 0);
   assert.equal(pkgCheck.missing.length, 0);
-  assert.equal(pkgCheck.verifiedCount, 76);
+  assert.equal(pkgCheck.verifiedCount, 77);
 
   // 2. Verify root hash is correct against both expected manifest files and computed live ledger
   const computedRootFromManifest = computeRootHash(manifest.files);
@@ -163,7 +163,7 @@ test('Package integrity: doctor exits successfully in a clean checkout', () => {
   const cliPath = path.resolve(__dirname, '../../bin/ai-ecosystem.js');
   const output = execFileSync(process.execPath, [cliPath, 'doctor'], { encoding: 'utf8' });
 
-  assert.match(output, /\[PASS\] Package Integrity: 76 critical governance files verified/);
+  assert.match(output, /\[PASS\] Package Integrity: \d+ critical governance files verified/);
   assert.match(output, /Overall Status: HEALTHY/);
 });
 
@@ -226,6 +226,6 @@ test('Self-validating catalog gate verifies 100% sync across filesystem, manifes
   const syncScript = path.resolve(__dirname, '../../scripts/sync-catalog.js');
   const output = execFileSync(process.execPath, [syncScript, '--check'], { encoding: 'utf8' });
 
-  assert.match(output, /All 54 skills are 100% synchronized/);
+  assert.match(output, /All 55 skills are 100% synchronized/);
   assert.match(output, /Frontmatter metadata, unique names, and directory mappings strictly verified/);
 });

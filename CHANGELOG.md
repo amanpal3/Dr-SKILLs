@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.3.0] - 2026-11-15
+
+### Added
+- **Expanded Skill Catalog (55 Skills)**: Added `improve` (two-tier codebase audit & planning advisor operating on a strict read-only boundary across 9 inspection tracks and producing self-contained specs in `plans/`).
+- **High-Resolution Banner Asset**: Integrated new 1800×800 banner (`assets/anti banner.png`) into `README.md`.
+- **77-File Merkle Integrity Ledger**: Expanded `integrity.json` coverage to include `improve` skill specifications, updating SHA-256 root digest.
+
+### Changed
+- **Lockup SVG Typography**: Updated `assets/dr-skills-lockup-dark.svg` (`SKILLs` in pure white `#FFFFFF`) and `assets/dr-skills-lockup-light.svg` (`SKILLs` in Dark Slate `#0F172A`) for high-contrast monochromatic visual consistency.
+
 ## [2.2.0] - 2026-11-02
 
 ### Added

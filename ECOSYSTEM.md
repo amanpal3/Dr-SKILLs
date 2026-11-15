@@ -382,6 +382,12 @@ Channels senior developer restraint: ruthless simplicity, YAGNI, standard librar
 - **How It Works:** The meta-skill that authors, validates, and registers new skills into `.agent/skills/`, enforcing YAML frontmatter and progressive disclosure guidelines.
 - **When to Use:** When creating a brand-new skill for this repository or another project.
 
+#### 55. `improve`
+
+- **Directory:** `.agent/skills/improve/`
+- **How It Works:** Senior codebase advisor and spec generator operating on a strict read-only boundary. Evaluates repositories across 9 audit tracks (bugs, security, performance, tech debt, test coverage, dependencies, DX, docs, roadmap) and writes self-contained implementation plans into `plans/` for cheaper executor models or worktree subagents. Never modifies source code directly.
+- **When to Use:** When surveying codebases for technical debt, planning multi-file refactors, conducting read-only audits, or producing worktree execution specifications.
+
 ---
 
 ## 🔌 2. All Model Context Protocol (MCP) Integrations

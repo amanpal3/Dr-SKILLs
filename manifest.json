@@ -1,8 +1,8 @@
 {
-  "version": "2.2.0",
+  "version": "2.3.0",
   "name": "Dr-SKILLs",
   "description": "Dr-SKILLs: Production-grade AI Skill System, MCP integrations, autonomous plugins, and multi-agent rules.",
-  "skills_count": 54,
+  "skills_count": 55,
   "skills": [
     "antigravity-agents",
     "archify",
@@ -36,6 +36,7 @@
     "gsd-verifier",
     "gtm-strategy",
     "humanizer",
+    "improve",
     "integrating-sentry",
     "managing-firebase",
     "owasp-security",
