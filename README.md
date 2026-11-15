@@ -8,13 +8,15 @@
 </p>
 
 <p align="center">
-  <img src="assets/anti%20banner.png" alt="Dr-SKILLs Banner" width="100%" style="border-radius: 16px; box-shadow: 0 12px 40px rgba(0, 229, 255, 0.2);" />
-</p>
-
-<p align="center">
   <strong>Stop Vibecoding. Start Shipping.</strong><br/>
   <em>55+ modular skills, MCP servers, and guardrails that make Google Antigravity, Claude Code, Cursor, and Codex build reliable, production-ready software.</em>
 </p>
+
+
+<p align="center">
+  <img src="assets/anti%20banner.png" alt="Dr-SKILLs Banner" width="100%" style="border-radius: 16px; box-shadow: 0 12px 40px rgba(0, 229, 255, 0.2);" />
+</p>
+
 
 <p align="center">
   <a href="https://www.npmjs.com/package/dr-skills"><img src="https://img.shields.io/npm/v/dr-skills?style=for-the-badge&logo=npm&color=CB3837" alt="npm version" /></a>
