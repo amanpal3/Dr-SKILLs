@@ -8,12 +8,11 @@
 </p>
 
 <p align="center">
-  <img src="assets/anti%20banner.png" alt="Dr-SKILLs Banner" width="100%" style="border-radius: 16px; box-shadow: 0 12px 40px rgba(0, 229, 255, 0.2);" />
-</p>
-
-<p align="center">
   <strong>Stop Vibecoding. Start Shipping.</strong><br/>
   <em>55+ modular skills, MCP servers, and guardrails that make Google Antigravity, Claude Code, Cursor, and Codex build reliable, production-ready software.</em>
+</p>
+<p align="center">
+  <img src="assets/anti%20banner.png" alt="Dr-SKILLs Banner" width="100%" style="border-radius: 16px; box-shadow: 0 12px 40px rgba(0, 229, 255, 0.2);" />
 </p>
 
 <p align="center">
@@ -42,16 +41,16 @@ npx -y dr-skills install all
 
 ### 🧭 Which agent do you use?
 
-| Your AI Agent / Platform | One-Line Install Command | Verification Step | Installed Target Paths |
-| :--- | :--- | :--- | :--- |
-| 🩺 **All Agents (Recommended)** | `npx -y dr-skills install all` | `npx -y dr-skills doctor` | `~/.gemini`, `~/.agent`, `~/.codex` |
-| ⚡ **Google Antigravity & AGY CLI** | `npx -y dr-skills install antigravity` | `npx -y dr-skills doctor` | `~/.gemini/config/skills/` & `rules/` |
-| 🤖 **Claude Code** | `npx -y dr-skills install claude` | `npx -y dr-skills doctor` | `~/.agent/skills/` & `rules/` |
-| 🖱️ **Cursor** | `npx -y dr-skills install cursor` | `npx -y dr-skills doctor` | `~/.agent/skills/` & `rules/` |
-| 🧠 **OpenAI Codex CLI** | `npx -y dr-skills install codex` | `npx -y dr-skills doctor` | `~/.codex/skills/` |
+| Your AI Agent / Platform                         | One-Line Install Command                | Verification Step         | Installed Target Paths                |
+| :----------------------------------------------- | :-------------------------------------- | :------------------------ | :------------------------------------ |
+| 🩺 **All Agents (Recommended)**                  | `npx -y dr-skills install all`          | `npx -y dr-skills doctor` | `~/.gemini`, `~/.agent`, `~/.codex`   |
+| ⚡ **Google Antigravity & AGY CLI**              | `npx -y dr-skills install antigravity`  | `npx -y dr-skills doctor` | `~/.gemini/config/skills/` & `rules/` |
+| 🤖 **Claude Code**                               | `npx -y dr-skills install claude`       | `npx -y dr-skills doctor` | `~/.agent/skills/` & `rules/`         |
+| 🖱️ **Cursor**                                    | `npx -y dr-skills install cursor`       | `npx -y dr-skills doctor` | `~/.agent/skills/` & `rules/`         |
+| 🧠 **OpenAI Codex CLI**                          | `npx -y dr-skills install codex`        | `npx -y dr-skills doctor` | `~/.codex/skills/`                    |
 | 📁 **Local Project (Windsurf / Trae / Copilot)** | `npx -y dr-skills install ./my-project` | `npx -y dr-skills doctor` | `<project>/.agent/skills/` & `rules/` |
 
-> 💡 *PowerShell Alternative:* Windows users can also run `.\install-skills.ps1 store` or `.\install-skills.bat`.
+> 💡 _PowerShell Alternative:_ Windows users can also run `.\install-skills.ps1 store` or `.\install-skills.bat`.
 
 ---
 
@@ -121,12 +120,12 @@ With Dr-SKILLs:
 
 ### 💡 Example: Implementing an Authenticated API
 
-| Phase | ❌ Without Dr-SKILLs (Vibecoding) | ✅ With Dr-SKILLs (Context Engineering) |
-| :--- | :--- | :--- |
-| **1. Request** | *"Add user auth with JWT"* | User intent captured in a locked `.gsd/SPEC.md` contract |
-| **2. Planning** | Agent hallucinates deprecated SDK methods in memory | Decomposed into phased `PLAN.md` tasks with dependency waves |
-| **3. Execution** | Leaks secret key to client bundle, forgets input validation | Atomic execution wave: strict OWASP validation, zero secret leakage |
-| **4. Verification** | *"Trust me, it works"* (Breaks in CI/production) | Empirical proof gate: automated tests pass, exit code 0 verified |
+| Phase               | ❌ Without Dr-SKILLs (Vibecoding)                           | ✅ With Dr-SKILLs (Context Engineering)                             |
+| :------------------ | :---------------------------------------------------------- | :------------------------------------------------------------------ |
+| **1. Request**      | _"Add user auth with JWT"_                                  | User intent captured in a locked `.gsd/SPEC.md` contract            |
+| **2. Planning**     | Agent hallucinates deprecated SDK methods in memory         | Decomposed into phased `PLAN.md` tasks with dependency waves        |
+| **3. Execution**    | Leaks secret key to client bundle, forgets input validation | Atomic execution wave: strict OWASP validation, zero secret leakage |
+| **4. Verification** | _"Trust me, it works"_ (Breaks in CI/production)            | Empirical proof gate: automated tests pass, exit code 0 verified    |
 
 ---
 
@@ -210,7 +209,7 @@ User Request
 | **`ui-ux-pro-max`**         | [`.agent/skills/ui-ux-pro-max/`](.agent/skills/ui-ux-pro-max/)                 | Senior UI/UX design tokens, UX psychology laws (Fitts, Hick, Miller), storytelling layouts, and micro-interactions. |
 | **`designing-with-stitch`** | [`.agent/skills/designing-with-stitch/`](.agent/skills/designing-with-stitch/) | Screen generation, responsive device layouts, and design system tokens using Google Stitch MCP.                     |
 | **`brand-identity`**        | [`.agent/skills/brand-identity/`](.agent/skills/brand-identity/)               | Design tokens, typography hierarchies, semantic color palettes, and voice/tone copywriting standards.               |
-| **`design`**                | [`.agent/skills/design/`](.agent/skills/design/)                               | Comprehensive design intelligence: brand identity, corporate identity program (CIP), mockups, and presentations.   |
+| **`design`**                | [`.agent/skills/design/`](.agent/skills/design/)                               | Comprehensive design intelligence: brand identity, corporate identity program (CIP), mockups, and presentations.    |
 | **`design-system`**         | [`.agent/skills/design-system/`](.agent/skills/design-system/)                 | Token architecture (primitive → semantic → component), strict CSS variables, fluid typography, and modular scales.  |
 | **`ui-styling`**            | [`.agent/skills/ui-styling/`](.agent/skills/ui-styling/)                       | Tailwind CSS utilities, `shadcn/ui` accessible primitives, color themes, dark mode, and responsive layouts.         |
 | **`banner-design`**         | [`.agent/skills/banner-design/`](.agent/skills/banner-design/)                 | Social media, ads, and website hero banners across 22 artistic styles and standard platform aspect ratios.          |
@@ -228,14 +227,14 @@ User Request
 
 ### 🛡️ Security, Governance & Testing
 
-| Skill                      | Directory                                                                    | Core Capabilities                                                                                                          |
-| :------------------------- | :--------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------- |
-| **`defend-what-you-ship`** | [`.agent/skills/defend-what-you-ship/`](.agent/skills/defend-what-you-ship/) | Human whiteboard defense: dual-speed lanes (PoC vs Lane B), session handovers, zero-vibes verification, teach-back drills. |
-| **`security-audit`**       | [`.agent/skills/security-audit/`](.agent/skills/security-audit/)             | Adversarial security auditor: reconnaissance, coverage hunting across 10 attack classes, and candidate verification.       |
-| **`owasp-security`**       | [`.agent/skills/owasp-security/`](.agent/skills/owasp-security/)             | OWASP Top 10 mitigation, auth boundaries, strict input validation, secret hygiene, and SQLi/XSS defense.                   |
-| **`code-review`**          | [`.agent/skills/code-review/`](.agent/skills/code-review/)                   | Senior code review auditing for correctness, security vulnerabilities, performance bottlenecks, and clean diffs.           |
+| Skill                      | Directory                                                                    | Core Capabilities                                                                                                                |
+| :------------------------- | :--------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------- |
+| **`defend-what-you-ship`** | [`.agent/skills/defend-what-you-ship/`](.agent/skills/defend-what-you-ship/) | Human whiteboard defense: dual-speed lanes (PoC vs Lane B), session handovers, zero-vibes verification, teach-back drills.       |
+| **`security-audit`**       | [`.agent/skills/security-audit/`](.agent/skills/security-audit/)             | Adversarial security auditor: reconnaissance, coverage hunting across 10 attack classes, and candidate verification.             |
+| **`owasp-security`**       | [`.agent/skills/owasp-security/`](.agent/skills/owasp-security/)             | OWASP Top 10 mitigation, auth boundaries, strict input validation, secret hygiene, and SQLi/XSS defense.                         |
+| **`code-review`**          | [`.agent/skills/code-review/`](.agent/skills/code-review/)                   | Senior code review auditing for correctness, security vulnerabilities, performance bottlenecks, and clean diffs.                 |
 | **`improve`**              | [`.agent/skills/improve/`](.agent/skills/improve/)                           | Codebase audit & planning advisor that never modifies source code directly; produces self-contained execution specs in `plans/`. |
-| **`testing-code`**         | [`.agent/skills/testing-code/`](.agent/skills/testing-code/)                 | Automated test architecture across Unit, Integration, and E2E tiers (Vitest, Jest, Pytest, Playwright).                    |
+| **`testing-code`**         | [`.agent/skills/testing-code/`](.agent/skills/testing-code/)                 | Automated test architecture across Unit, Integration, and E2E tiers (Vitest, Jest, Pytest, Playwright).                          |
 
 ### ✂️ Simplicity & Anti-Overengineering (Ponytail Suite)
 
@@ -274,7 +273,7 @@ User Request
 | **`gsd-context-health-monitor`** | [`.agent/skills/gsd-context-health-monitor/`](.agent/skills/gsd-context-health-monitor/) | Monitors token complexity and triggers proactive state dumps before reasoning degrades.     |
 | **`gsd-token-budget`**           | [`.agent/skills/gsd-token-budget/`](.agent/skills/gsd-token-budget/)                     | Tracks token allocations across planning, execution, and verification phases.               |
 | **`gsd-empirical-validation`**   | [`.agent/skills/gsd-empirical-validation/`](.agent/skills/gsd-empirical-validation/)     | Zero-vibes proof enforcement: requires exit codes, test outputs, or browser snapshots.      |
-| **`planning-strategy`**          | [`.agent/skills/planning-strategy/`](.agent/skills/planning-strategy/)                     | Strategic task breakdown, architectural roadmap alignment, and phase dependency gating.      |
+| **`planning-strategy`**          | [`.agent/skills/planning-strategy/`](.agent/skills/planning-strategy/)                   | Strategic task breakdown, architectural roadmap alignment, and phase dependency gating.     |
 
 ### 📈 Product, Strategy & Growth
 
@@ -309,17 +308,17 @@ Plugins package complete domain capabilities (skills, instructions, and workflow
 
 Pre-configured in [`mcp.json`](mcp.json) with security validation and schema checks:
 
-| Server Name               | Protocol / Command                           | Auth Required?  | Tier / Cost           | Key Provider / Setup                                                                              |
-| :------------------------ | :------------------------------------------- | :-------------: | :-------------------- | :------------------------------------------------------------------------------------------------ |
-| **`shadcn`**              | `npx -y shadcn@4.23.0 mcp`                   |    ❌ **No**    | Free & Open Source    | Built-in (Local Execution)                                                                        |
-| **`21st` (Magic UI)**     | `npx -y @21st-dev/magic@0.2.3`               |   ✅ **Yes**    | Free Tier Available   | Run `21st login` or [21st.dev/mcp](https://21st.dev/mcp)                                          |
-| **`context7`**            | `https://mcp.context7.com/mcp`               |   ✅ **Yes**    | Free Tier Available   | [context7.com](https://context7.com) (`Authorization: Bearer <KEY>`)                              |
-| **`StitchMCP`**           | `npx -y mcp-remote@0.15.2 ...`               |   ✅ **Yes**    | Google Cloud / Stitch | [stitch.googleapis.com](https://stitch.googleapis.com) (`X-Goog-Api-Key: <KEY>`)                  |
-| **`chrome-devtools-mcp`** | `npx -y chrome-devtools-mcp@1.12.0`          |    ❌ **No**    | Free & Local          | Local Chrome / Node (Zero-Config)                                                                 |
-| **`playwright`**          | `npx -y @playwright/mcp@0.0.84`              |    ❌ **No**    | Free & Local          | Local Playwright (Zero-Config)                                                                    |
+| Server Name               | Protocol / Command                                    | Auth Required?  | Tier / Cost           | Key Provider / Setup                                                                              |
+| :------------------------ | :---------------------------------------------------- | :-------------: | :-------------------- | :------------------------------------------------------------------------------------------------ |
+| **`shadcn`**              | `npx -y shadcn@4.23.0 mcp`                            |    ❌ **No**    | Free & Open Source    | Built-in (Local Execution)                                                                        |
+| **`21st` (Magic UI)**     | `npx -y @21st-dev/magic@0.2.3`                        |   ✅ **Yes**    | Free Tier Available   | Run `21st login` or [21st.dev/mcp](https://21st.dev/mcp)                                          |
+| **`context7`**            | `https://mcp.context7.com/mcp`                        |   ✅ **Yes**    | Free Tier Available   | [context7.com](https://context7.com) (`Authorization: Bearer <KEY>`)                              |
+| **`StitchMCP`**           | `npx -y mcp-remote@0.15.2 ...`                        |   ✅ **Yes**    | Google Cloud / Stitch | [stitch.googleapis.com](https://stitch.googleapis.com) (`X-Goog-Api-Key: <KEY>`)                  |
+| **`chrome-devtools-mcp`** | `npx -y chrome-devtools-mcp@1.12.0`                   |    ❌ **No**    | Free & Local          | Local Chrome / Node (Zero-Config)                                                                 |
+| **`playwright`**          | `npx -y @playwright/mcp@0.0.84`                       |    ❌ **No**    | Free & Local          | Local Playwright (Zero-Config)                                                                    |
 | **`github-mcp-server`**   | `npx -y @modelcontextprotocol/server-github@2025.4.8` |   ✅ **Yes**    | Free (GitHub Account) | [github.com/settings/tokens](https://github.com/settings/tokens) (`GITHUB_PERSONAL_ACCESS_TOKEN`) |
-| **`gmp-code-assist`**     | `https://mapscodeassist.googleapis.com/mcp`  | ⚠️ **Optional** | Google Cloud Tier     | [console.cloud.google.com](https://console.cloud.google.com) (ADC / Header)                       |
-| **`firebase-mcp-server`** | `npx -y firebase-mcp-server`                 |   ✅ **Yes**    | Free Tier Available   | Run `firebase login` (CLI OAuth)                                                                  |
+| **`gmp-code-assist`**     | `https://mapscodeassist.googleapis.com/mcp`           | ⚠️ **Optional** | Google Cloud Tier     | [console.cloud.google.com](https://console.cloud.google.com) (ADC / Header)                       |
+| **`firebase-mcp-server`** | `npx -y firebase-mcp-server`                          |   ✅ **Yes**    | Free Tier Available   | Run `firebase login` (CLI OAuth)                                                                  |
 
 > 📖 See [**`PLUGINS_AND_MCP_README.md`**](PLUGINS_AND_MCP_README.md) for detailed configuration, permission policies, and troubleshooting.
 
