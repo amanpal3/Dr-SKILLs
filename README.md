@@ -1,8 +1,9 @@
 <p align="center">
   <a href="#-quick-start">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="assets/dr-skills-lockup-dark.svg" />
-      <img src="assets/dr-skills-lockup-light.svg" alt="Dr-SKILLs" width="440" height="121" />
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/amanpal3/SKILLs/main/assets/dr-skills-lockup-dark.png" />
+      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/amanpal3/SKILLs/main/assets/dr-skills-lockup-light.png" />
+      <img src="assets/dr-skills-lockup-dark.png" alt="Dr-SKILLs" width="440" height="121" />
     </picture>
   </a>
 </p>
@@ -11,8 +12,9 @@
   <strong>Stop Vibecoding. Start Shipping.</strong><br/>
   <em>55+ modular skills, MCP servers, and guardrails that make Google Antigravity, Claude Code, Cursor, and Codex build reliable, production-ready software.</em>
 </p>
+
 <p align="center">
-  <img src="assets/anti%20banner.png" alt="Dr-SKILLs Banner" width="100%" style="border-radius: 16px; box-shadow: 0 12px 40px rgba(0, 229, 255, 0.2);" />
+  <img src="assets/anti-banner.png" alt="Dr-SKILLs Banner" width="100%" />
 </p>
 
 <p align="center">

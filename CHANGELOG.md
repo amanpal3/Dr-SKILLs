@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - **Expanded Skill Catalog (55 Skills)**: Added `improve` (two-tier codebase audit & planning advisor operating on a strict read-only boundary across 9 inspection tracks and producing self-contained specs in `plans/`).
-- **High-Resolution Banner Asset**: Integrated new 1800×800 banner (`assets/anti banner.png`) into `README.md`.
+- **High-Resolution Banner Asset**: Integrated new 1800×800 banner (`assets/anti-banner.png`) into `README.md`.
 - **77-File Merkle Integrity Ledger**: Expanded `integrity.json` coverage to include `improve` skill specifications, updating SHA-256 root digest.
 
 ### Changed
