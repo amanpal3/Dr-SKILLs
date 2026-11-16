@@ -76,7 +76,8 @@
     "install-skills.ps1",
     "install-skills.bat",
     "LICENSE",
-    "README.md"
+    "README.md",
+    "CHANGELOG.md"
   ],
   "publishConfig": {
     "access": "public"
